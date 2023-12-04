@@ -117,7 +117,8 @@ public class FileService {
      */
     public String getResourceDirectory() {
         String resourceDirectory = System.getProperty("user.dir");
-        return String.valueOf(Paths.get(resourceDirectory, "src", "main", "resources", "document"))
+        return String.valueOf(Paths.get(resourceDirectory, "starter",
+                        "cloudstorage", "src", "main", "resources", "document"))
                 .concat(File.separator);
     }
 

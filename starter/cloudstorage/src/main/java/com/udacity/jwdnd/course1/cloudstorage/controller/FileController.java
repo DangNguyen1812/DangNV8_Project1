@@ -38,7 +38,7 @@ public class FileController {
         try {
             fileService.mapMultipartFile(file, fileModel);
             String filePath = fileService.getResourceDirectory() + fileModel.getFileName();
-            //file.transferTo(new File(filePath));
+            file.transferTo(new File(filePath));
             fileService.add(fileModel);
             fileService.setFileNotification("Success: Upload file successfully");
         } catch (FileException e) {
@@ -57,7 +57,7 @@ public class FileController {
      * @return
      * @throws IOException
      */
-    @GetMapping("/download/{fileName}")
+    @GetMapping("/download/{fileName:.+}")
     public ResponseEntity<FileSystemResource> downloadFile(@PathVariable String fileName) throws IOException {
         String resourceDirectory = fileService.getResourceDirectory();
         Path filePath = Paths.get(resourceDirectory).resolve(fileName);
@@ -83,7 +83,7 @@ public class FileController {
         String filePath = resourceDirectory + filemodel.getFileName();
 
         File file = new File(filePath);
-        if (file.getPath() != null) {
+        if (file.exists()) {
             file.delete();
             fileService.deleteByID(Integer.valueOf(fileId));
             fileService.setFileNotification("Success: The file has been successfully delete");
