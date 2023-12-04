@@ -70,9 +70,9 @@ public class CredentialControllerTest {
         noteTab.click();
 
         // Click button add credential
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-add-cre")));
-        WebElement btnAddNote = driver.findElement(By.id("btn-add-cre"));
-        btnAddNote.click();
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-add-credential")));
+        WebElement btnAddCredential = driver.findElement(By.id("btn-add-credential"));
+        btnAddCredential.click();
 
         createUpdateCredential(url, userName, password);
 
@@ -112,9 +112,9 @@ public class CredentialControllerTest {
         noteTab.click();
 
         // Click button add credential
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-add-cre")));
-        WebElement btnAddNote = driver.findElement(By.id("btn-add-cre"));
-        btnAddNote.click();
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-add-credential")));
+        WebElement btAddCredential = driver.findElement(By.id("btn-add-credential"));
+        btAddCredential.click();
 
         // Create credential
         createUpdateCredential(url, userName, password);
@@ -169,9 +169,9 @@ public class CredentialControllerTest {
         noteTab.click();
 
         // Click button add credential
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-add-cre")));
-        WebElement btnAddNote = driver.findElement(By.id("btn-add-cre"));
-        btnAddNote.click();
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-add-credential")));
+        WebElement btnAddCredential = driver.findElement(By.id("btn-add-credential"));
+        btnAddCredential.click();
 
         // Create credential
         createUpdateCredential(url, userName, password);
@@ -185,7 +185,7 @@ public class CredentialControllerTest {
         // Use the url to determine the position of the delete button.
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr[.//th[text()='" + url + "']]")));
         WebElement row = driver.findElement(By.xpath("//tr[.//th[text()='" + url + "']]"));
-        WebElement editButton = row.findElement(By.id("btn-deleteCre"));
+        WebElement editButton = row.findElement(By.id("btn-credential-delete"));
         editButton.click();
 
         // Output
@@ -224,9 +224,9 @@ public class CredentialControllerTest {
 
         Thread.sleep(1000);
 
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-saveCre")));
-        WebElement btnSaveCre = driver.findElement(By.id("btn-saveCre"));
-        btnSaveCre.click();
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-update-credential")));
+        WebElement btnSaveCredential = driver.findElement(By.id("btn-update-credential"));
+        btnSaveCredential.click();
     }
 
     /**

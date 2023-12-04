@@ -199,9 +199,9 @@ public class NoteControllerTest {
         inputDes.clear();
         inputDes.sendKeys(description);
 
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-saveNote")));
-        WebElement btnSaveNote = driver.findElement(By.id("btn-saveNote"));
-        btnSaveNote.click();
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btn-update-note")));
+        WebElement btnUpdateNote = driver.findElement(By.id("btn-update-note"));
+        btnUpdateNote.click();
     }
 
     /**
